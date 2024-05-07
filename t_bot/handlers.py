@@ -3,7 +3,7 @@ from aiogram import types, Dispatcher, F
 from aiogram.filters import CommandStart, Command
 
 from keyboards import site_kb
-from t_bot.db import db_get_all_products
+from db import db_get_all_products
 
 dp = Dispatcher()
 PRICE = {
