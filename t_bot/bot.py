@@ -1,8 +1,7 @@
 import asyncio
 import os
 
-from aiogram import Bot, types, Dispatcher
-from aiogram.filters import CommandStart
+from aiogram import Bot
 from dotenv import load_dotenv
 
 from aiogram.client.default import DefaultBotProperties
