@@ -1,4 +1,4 @@
-from aiogram import types, Dispatcher
+from aiogram import types, Dispatcher, F
 
 from aiogram.filters import CommandStart, Command
 
@@ -28,3 +28,8 @@ async def cmd_products(message: types.Message):
         print(product)
         await message.answer(text=f"Product {product[1]}\n"
                                   f"Prise {product[3]}")
+
+
+@dp.message(F.func(lambda msg: msg.web_app_data.data))
+async def get_item_btn(msg: types.Message):
+    await msg.answer(f"Вы выбрали товар {msg.web_app_data.data}!")
