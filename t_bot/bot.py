@@ -6,8 +6,12 @@ from dotenv import load_dotenv
 
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
+from aiogram.client.session.aiohttp import AiohttpSession
 
 load_dotenv()
+
+# session = AiohttpSession(proxy="http://proxy.server:3128")
+# bot = Bot(token=BOT_TOKEN, session=session)
 bot = Bot(token=os.getenv("BOT_TOKEN"), default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 
 
