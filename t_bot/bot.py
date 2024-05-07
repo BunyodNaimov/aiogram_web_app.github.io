@@ -11,7 +11,7 @@ from aiogram.client.session.aiohttp import AiohttpSession
 load_dotenv()
 
 # session = AiohttpSession(proxy="http://proxy.server:3128")
-# bot = Bot(token=BOT_TOKEN, session=session)
+# bot = Bot(token=os.getenv("BOT_TOKEN"), session=session, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 bot = Bot(token=os.getenv("BOT_TOKEN"), default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 
 
