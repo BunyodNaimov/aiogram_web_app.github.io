@@ -12,8 +12,10 @@
         {%for product in products%}
         <div class="item">
             <img src="../static/1.png" alt="" class="img">
-            <p class="price">{{product[3]}} so'm</p>
-            <button class="btn" id="btn1">Add</button>
+
+            <p>{{product.name}}</p>
+            <p>{{product.price}}</p>
+            <button onclick='func("{{product.name}}", "{{product.price}}")' class="btn">Add</button>
         </div>
         {%endfor%}
     </div>

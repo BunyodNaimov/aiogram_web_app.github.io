@@ -23,4 +23,6 @@ async def cmd_products(message: types.Message):
 
 @dp.message(F.func(lambda msg: msg.web_app_data.data))
 async def get_item_btn(msg: types.Message):
-    await msg.answer(f"Вы выбрали товар {msg.web_app_data.data}!")
+    await msg.answer(f"Вы выбрали товар:\n"
+                     f"Name: {msg.web_app_data.data.split('/')[0]}\n"
+                     f"Price: {msg.web_app_data.data.split('/')[1]}")

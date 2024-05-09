@@ -1,3 +1,4 @@
+import json
 import sqlite3
 from databases import Database
 from fastapi import FastAPI, Request
@@ -17,6 +18,9 @@ database = sqlite3.connect('database.db')
 
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
-    products = database.execute("SELECT * FROM products").fetchall()
+    result = database.execute("SELECT * FROM products").fetchall()
+    products = []
+    for product in result:
+        products.append({"name": product[1], "price": product[3]})
     print(products)
     return templates.TemplateResponse("index.html", {"request": request, "products": products})
