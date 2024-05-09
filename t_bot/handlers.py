@@ -15,9 +15,8 @@ async def start(message: types.Message):
 
 @dp.message(Command(commands='products'))
 async def cmd_products(message: types.Message):
-    products = await db_get_all_products()
+    products = db_get_all_products()
     for product in products:
-        print(product)
         await message.answer(text=f"Product {product[1]}\n"
                                   f"Prise {product[3]}")
 

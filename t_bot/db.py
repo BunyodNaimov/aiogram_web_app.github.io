@@ -1,6 +1,6 @@
 import sqlite3
 
-db_connection = sqlite3.connect('database.db')
+db_connection = sqlite3.connect('../database.db')
 db_cursor = db_connection.cursor()
 
 
@@ -10,6 +10,8 @@ def db_create_table_product():
     """)
 
 
-async def db_get_all_products():
-    return db_cursor.execute("""
+def db_get_all_products():
+    products = db_cursor.execute("""
     SELECT * FROM products""").fetchall()
+    print(products)
+    return products
