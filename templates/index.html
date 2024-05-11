@@ -15,7 +15,14 @@
 
             <p>{{product.name}}</p>
             <p>{{product.price}}</p>
-            <button onclick='func("{{product.name}}", "{{product.price}}")' class="btn">Add</button>
+            <button onclick='func("{{product.name}}", "{{product.price}}")' class="btn" id="add_button">Add</button>
+        </div>
+
+        <div>
+            <div class="num" id="num">0</div>
+            <button class="btn rmv_btn" id="rmv_btn">-</button>
+            <button class="btn add_btn" id="add_btn">+</button>
+
         </div>
         {%endfor%}
     </div>

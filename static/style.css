@@ -18,6 +18,7 @@ body {
 
 .img {
 	width: 150px;
+
 }
 
 .item {
@@ -37,8 +38,20 @@ body {
 	transition: background .2s linear;
 }
 
+.rmv_btn{
+	display: none;
+
+}
+.add_btn{
+	display: none;
+
+}
+
 .btn:hover {
 	background: lightgreen;
+}
+.num{
+	display: none;
 }
 
 .usercard {
